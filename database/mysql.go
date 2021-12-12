@@ -22,9 +22,9 @@ func DBConnection() (*sql.DB, error){
 }
 
 func Setup(db *sql.DB){
-	_, err := db.Exec("CREATE TABLE IF NOT EXISTS Tag(Name TEXT NOT NULL, CreatedAt TEXT NOT NULL, IsActive TEXT NOT NULL)")
+	_, err := db.Exec("CREATE TABLE IF NOT EXISTS Tags(Name TEXT NOT NULL, CreatedAt TEXT NOT NULL, IsActive TEXT NOT NULL)")
 	if err != nil{
 		panic(err)
 	}
-	log.Println("Table Tag has been created")
+	log.Println("Table Tags has been created")
 }
